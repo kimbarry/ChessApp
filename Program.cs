@@ -1,3 +1,8 @@
+//set up Git
+//open project
+//delete weather report info
+//add app.UseRouting; delete app.MapControllers replace w/UseEndpoints
+
 namespace ChessClubApi
 {
     public class Program
@@ -24,10 +29,15 @@ namespace ChessClubApi
 
             app.UseHttpsRedirection();
 
+            app.UseRouting();
+
             app.UseAuthorization();
 
 
-            app.MapControllers();
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+            });
 
             app.Run();
         }
