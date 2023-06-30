@@ -1,0 +1,35 @@
+Urgent TODOs:
+
+- Update Volume Mount path (persist on pi storage)
+  https://github.com/mafudge/learn-databases/blob/e96cc01b759c465f7794e2e2b1b048ef987ff3d0/docker-compose-azure-sql.yaml#L14
+
+- Clean redeploy - down && up not stop/start/restart
+  https://docs.docker.com/engine/reference/commandline/compose_down/
+
+- Restore previous backup file & create csds-admin user
+
+- Wire up DB Backups:
+  https://docs.microsoft.com/en-us/azure/azure-sql-edge/backup-restore#back-up-to-local-disk
+  (use scheduled job see here:
+     https://www.sqlservercentral.com/articles/introduction-to-sql-jobs-in-azure-data-studio)
+
+- Test DB Restore from backup:
+  https://docs.microsoft.com/en-us/azure/azure-sql-edge/backup-restore#restore-from-a-local-disk
+
+- Setup new cloud account and use always free services to host as much as possible
+  DB: 
+	https://aws.amazon.com/dynamodb/?did=ft_card&trk=ft_card
+  Notifications of sold items via text
+	https://aws.amazon.com/sns/?did=ft_card&trk=ft_card
+  CDN:
+	https://aws.amazon.com/cloudfront/pricing/?loc=ft#AWS_Free_Usage_Tier
+  Lambda:
+	https://aws.amazon.com/lambda/?did=ft_card&trk=ft_card
+  Cognito (user mgmt):
+	https://aws.amazon.com/cognito/?did=ft_card&trk=ft_card
+  Monitoring (logs/metrics/availability/alerting):
+	https://aws.amazon.com/cloudwatch/
+	https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/install-CloudWatch-Agent-commandline-fleet.html      
+
+
+Stop docker containers, 

@@ -3,6 +3,8 @@
 //delete weather report info
 //add app.UseRouting; delete app.MapControllers replace w/UseEndpoints
 
+using Microsoft.AspNetCore.StaticFiles;
+
 namespace ChessClubApi
 {
     public class Program
@@ -13,10 +15,15 @@ namespace ChessClubApi
 
             // Add services to the container.
 
-            builder.Services.AddControllers();
+            builder.Services.AddControllers(options =>
+            {
+                options.ReturnHttpNotAcceptable = true;
+            }).AddXmlDataContractSerializerFormatters();//.AddNewtonsoftJson(
+            
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            builder.Services.AddSingleton<FileExtensionContentTypeProvider>();//research add singleton
 
             var app = builder.Build();
 
